@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpringBoot项目开发系列</title>
+    <link th:replace="template/common :: header" />
+    <script th:replace="template/common :: footer"></script>
+</head>
+<body>
+    <div class="index_font">首页</div>
+    <div class="index_font">SpringBoot项目开发系列</div>
+    <div class="index_font">项目添加热部署模块，修改html代码后不用重启项目，提高开发效率</div>
+    <div class="index_font" th:text="${date}"></div>
+
+    <div class="index_font"></div>
+    <div th:text="${user.name}"></div>
+    <div th:if="${user.age} > 20">我大于20啦</div>
+    <div th:unless="${user.age} > 20">我还年轻</div>
+
+    <div class="index_font">---thymeleaf --each循环，一般table表格展示数据居多</div>
+    <ul>
+        <li th:each="user: ${users}" th:text="${user.name}"></li>
+    </ul>
+
+    <script type="text/javascript" th:inline="javascript">
+        var user = [[${user}]];
+        console.log(user);
+        var users = [[${users}]];
+        console.log(users);
+    </script>
+</body>
+</html>
