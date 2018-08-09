@@ -1,4 +1,4 @@
-package com.zypcy.expend.contorller;
+package com.zypcy.expend.controller;
 
 import com.zypcy.expend.entity.User;
 import org.springframework.stereotype.Controller;
