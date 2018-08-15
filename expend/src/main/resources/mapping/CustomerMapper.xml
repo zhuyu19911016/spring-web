@@ -10,20 +10,38 @@
   <sql id="Base_Column_List">
     id, name, age, is_use
   </sql>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from customers
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="listByAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from customers
+  </select>
+
+  <!-- 翻页 -->
+  <select id="listPages" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from customers
+    order by id desc
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from customers
     where id = #{id,jdbcType=INTEGER}
   </delete>
+
   <insert id="insert" parameterType="com.zypcy.expend.entity.Customer">
     insert into customers (name, age, is_use)
     values (#{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{isUse,jdbcType=BIT})
   </insert>
+
   <insert id="insertSelective" parameterType="com.zypcy.expend.entity.Customer">
     insert into customers
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -55,6 +73,7 @@
       </if>
     </trim>
   </insert>
+
   <update id="updateByPrimaryKeySelective" parameterType="com.zypcy.expend.entity.Customer">
     update customers
     <set>
@@ -70,6 +89,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
+
   <update id="updateByPrimaryKey" parameterType="com.zypcy.expend.entity.Customer">
     update customers
     set name = #{name,jdbcType=VARCHAR},
@@ -77,4 +97,5 @@
       is_use = #{isUse,jdbcType=BIT}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
 </mapper>

@@ -1,0 +1,17 @@
+/*page css*/
+.margin_tp40 {margin-top:40px;}
+.eu_turnPage {font-size:0; text-align:center;}
+.eu_turnPage a {display:inline-block;text-decoration: none; width:45px; height:35px; margin:0 2px; border-radius:3px; background:#fff; border:solid 1px #e0e0e0; font-size:15px; text-align:center; line-height:35px; vertical-align:middle;}
+.eu_turnPage a.red_bg:hover {color:#fff!important;}
+.eu_turnPage a:hover {color:#f0503c!important;}
+.eu_turnPage a.eu_turnPage_txt {background:none; border:none; width:auto; height:35px; cursor:default; color:#666; font-size:13px; font-weight:normal;}
+.eu_turnPage a.eu_turnPage_txt:hover {color:#666 !important; }
+.eu_turnPage a.eu_turnPage_input input{border:none; background:none;width:30px; margin:0 auto; height:33px; line-height:33px; text-align:center;}
+.eu_turnPage a.eu_turnPage_go {background:#ccc; border-color:#ccc;cursor: pointer;width:50px;}
+.eu_turnPage a.eu_turnPage_go:hover {background:#d8d8d8;}
+.eu_turnPage a.eu_turnPage_go input {border:none; background:none;width:30px; margin:0 auto; height:33px; line-height:33px; text-align:center; font-weight:bold;}
+.red_bg {
+	background-color: #0036E0!important;
+	border-color: #0036E0!important;
+	color: #fff !important;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>客户列表</title>
+    <style>
+        table{border-collapse:collapse;}
+        table,th, td{border: 1px solid black;padding: 5px;text-align: center;}
+    </style>
+</head>
+<body>
+    <br/>
+    <br/>
+    <a href="/customers/edit">新增用户</a>
+    <br/>
+    <br/>
+    <table>
+        <thead>
+            <th width="20%">id</th>
+            <th width="20%">name</th>
+            <th width="20%">age</th>
+            <th width="20%">isUse</th>
+            <th width="20%">操作</th>
+        </thead>
+        <tbody>
+            <tr th:each="customer : ${customers}">
+                <td th:text="${customer.id}"></td>
+                <td th:text="${customer.name}"></td>
+                <td th:text="${customer.age}"></td>
+                <td th:text="${customer.isUse}"></td>
+                <td>
+                    <a th:href="@{/customers/edit(id=${customer.id})}">编辑</a> &nbsp;&nbsp;
+                    <a th:href="@{/customers/del/{id}(id=${customer.id})}">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
