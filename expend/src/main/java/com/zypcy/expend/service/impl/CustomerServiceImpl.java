@@ -52,6 +52,7 @@ public class CustomerServiceImpl implements ICustomerService {
         PageInfo<Customer> customers = null;
         Page page = param.getPage();
         if(page != null){
+            //翻页关键，调用插件的翻页方法，把前端的翻页数据传进插件
             PageHelper.startPage(page.getCurrentPage() , page.getPageSize());
             List<Customer> list = customerMapper.listPages();
             customers = new PageInfo<>(list);
