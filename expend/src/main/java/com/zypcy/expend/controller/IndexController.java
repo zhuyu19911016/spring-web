@@ -39,4 +39,15 @@ public class IndexController {
     public String getUserInfo(){
         return "name:zy,age:26";
     }
+
+
+    //测试全局异常
+    @RequestMapping("/testException")
+    public String testGlobalException(){
+        String str = null;
+        if(str.equals("123")){
+
+        }
+        return "index";
+    }
 }

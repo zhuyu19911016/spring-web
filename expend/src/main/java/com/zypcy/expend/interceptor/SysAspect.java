@@ -42,6 +42,7 @@ public class SysAspect {
     @AfterReturning(returning = "ret" , pointcut = "log()")
     public void doAfterReturning(Object ret){
         //处理完请求后，返回内容
-        System.out.println("方法返回值:"+ JSON.toJSONString(ret) +",方法执行时间:"+ (System.currentTimeMillis() - startTime.get()));
+        System.out.println("方法返回值:"+ JSON.toJSONString(ret));
+        System.out.println("方法执行时间:"+ (System.currentTimeMillis() - startTime.get()));
     }
 }

@@ -9,6 +9,15 @@ public class Customer {
 
     private Boolean isUse;
 
+    public Customer(){}
+
+    public Customer(Integer id, String name, Integer age, Boolean isUse) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+        this.isUse = isUse;
+    }
+
     public Integer getId() {
         return id;
     }
