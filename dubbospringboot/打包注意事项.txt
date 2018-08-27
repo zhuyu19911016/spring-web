@@ -1,0 +1,8 @@
+
+通过cmd 命令执行 mvn install
+
+1.要现在项目外出执行 mvn install 
+2.再给公用接口执行 mvn install
+3.再给服务提供者和服务消费者执行 mvn install
+
+
